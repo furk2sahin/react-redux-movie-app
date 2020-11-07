@@ -6,6 +6,7 @@ import {
 
 const initialState = {
     fetchin: false,
+    done: false,
     movies: [],
     error: {}
 };
@@ -22,6 +23,7 @@ export default (state = initialState, action) => {
                 ...state,
                 movies: action.payload,
                 fetching: false,
+                done: true
             }
         case NEW_MOVIE_REJECTED:
             return {
