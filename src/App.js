@@ -11,15 +11,9 @@ import Header from './components/Header';
 
 
 class App extends Component {
-
-
-
   render() {
-
     return (
-
       <div className="App">
-
         <Header />
         <Container text>
           <Route path='/movies' component={MoviesPage}></Route>

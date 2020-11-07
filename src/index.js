@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import thunk from 'redux-thunk'
+import thunk from 'redux-thunk';
+import logger from 'redux-logger';
+import reduxPromise from 'redux-promise-middleware'
 
 import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './reducers/rootReducer'
@@ -12,7 +14,7 @@ import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 const store = createStore(
   rootReducer,
-  composeWithDevTools(applyMiddleware(thunk))
+  composeWithDevTools(applyMiddleware(reduxPromise, thunk, logger))
 );
 
 ReactDOM.render(
