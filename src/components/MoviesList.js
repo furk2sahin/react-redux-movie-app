@@ -9,8 +9,6 @@ const MoviesList = ({ movies }) => {
         <p>There are no movies yet.</p>
     );
 
-
-
     const moviesList = (
         <div>
             <HashLoader
