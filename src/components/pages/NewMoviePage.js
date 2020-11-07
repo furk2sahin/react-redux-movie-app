@@ -22,7 +22,7 @@ const mapStateToProps = ({ newMovie }) => {
 };
 
 const mapDispatchToProps = {
-    onNewMovie
+    onNewMovieSubmit
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewMoviePage)

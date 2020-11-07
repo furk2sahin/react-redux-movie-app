@@ -12,7 +12,6 @@ export function onNewMovieSubmit({ title, cover }) {
                 title,
                 cover
             })
-                .then(result => result.data.movies)
         })
     }
 }
