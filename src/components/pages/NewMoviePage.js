@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import NewMovieForm from '../NewMovieForm'
+import { onNewMovieSubmit } from '../../actions/newMovie'
 
 class NewMoviePage extends Component {
-    constructor(props) {
-        super(props);
-    }
     render() {
         return (
             <div>
-                <NewMovieForm />
+                <NewMovieForm
+                    newMovie={this.props.newMovie}
+                    onNewMovieSubmit={this.props.onNewMovieSubmit} />
             </div>
         )
     }
@@ -21,4 +21,8 @@ const mapStateToProps = ({ newMovie }) => {
     }
 };
 
-export default connect()(NewMoviePage)
+const mapDispatchToProps = {
+    onNewMovie
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(NewMoviePage)
