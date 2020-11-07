@@ -36,8 +36,8 @@ class Header extends Component {
                             <Menu.Item header>Movieapp</Menu.Item>
                         </Menu.Item>
 
-                        <Menu.Item as={NavLink} to='/movies'>Movies</Menu.Item>
-                        <Menu.Item as='a'>Add New </Menu.Item>
+                        <Menu.Item as={NavLink} exact="true" to='/movies'>Movies</Menu.Item>
+                        <Menu.Item as={NavLink} to='/movies/new'>Add New </Menu.Item>
                     </Container>
                 </Menu>
             </Visibility>
