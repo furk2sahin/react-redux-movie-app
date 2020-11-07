@@ -5,7 +5,7 @@ const Footer = props => {
     return (
         <Segment inverted style={{ margin: '5em 0em 0em', padding: '2em 0em' }} vertical>
             <Container textAlign='center'>
-                <Image src='https://react.semantic-ui.com/logo.png' centered size='mini' />
+                <Image src='logo.png' centered size='mini' />
                 <List horizontal inverted divided link size='small'>
                     <List.Item as='a' href='#'>
                         Site Map

@@ -32,7 +32,7 @@ class Header extends Component {
                 >
                     <Container text>
                         <Menu.Item>
-                            <Image size='mini' src='https://react.semantic-ui.com/logo.png' />
+                            <Image size='mini' src='logo.png' />
                         </Menu.Item>
                         <Menu.Item header>Movie</Menu.Item>
                         <Menu.Item as={Link} to='/movies'>Movies</Menu.Item>
