@@ -1,7 +1,11 @@
 import {
     NEW_MOVIE_FULLFILLED,
     NEW_MOVIE_REJECTED,
-    NEW_MOVIE_PENDING
+    NEW_MOVIE_PENDING,
+
+    FETCH_MOVIE_FULLFILLED,
+    FETCH_MOVIE_REJECTED,
+    FETCH_MOVIE_PENDING
 } from '../actions/newMovie'
 
 const initialState = {
@@ -30,6 +34,22 @@ export default (state = initialState, action) => {
                 ...state,
                 error: action.payload,
                 fetching: false
+            }
+
+        //FETCH_MOVIE
+
+        case FETCH_MOVIE_PENDING:
+            return {
+                ...state,
+            }
+        case FETCH_MOVIE_FULLFILLED:
+            return {
+                ...state,
+                moviee: action.payload.movie,
+            }
+        case FETCH_MOVIE_REJECTED:
+            return {
+                ...state,
             }
         default:
             return state;
