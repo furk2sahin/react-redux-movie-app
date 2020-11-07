@@ -9,6 +9,15 @@
   }
 }
 
+.clearfix{
+  clear:both;
+  margin-bottom: 10px;
+}
+
+.inlineError{
+  color:#f44336;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
