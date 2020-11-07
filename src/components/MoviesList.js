@@ -4,7 +4,7 @@ import MovieCard from './MovieCard';
 import { Grid } from 'semantic-ui-react';
 import { HashLoader } from 'react-spinners';
 
-const MoviesList = ({ movies }) => {
+const MoviesList = ({ movies, deleteMovie }) => {
     const emptyMessage = (
         <p>There are no movies yet.</p>
     );
@@ -19,8 +19,13 @@ const MoviesList = ({ movies }) => {
             {
                 movies.error.response ?
                     <h3>Error retrieving data!</h3> :
-                    <Grid stackable columsn={3}>
-                        {movies.movies.map(movie => <MovieCard key={movie._id} movie={movie} />)}
+                    <Grid stackable column={3}>
+                        {movies.movies.map(movie => <MovieCard
+                            key={movie._id}
+                            deleteMovie={deleteMovie}
+                            movie={movie} />
+                        )
+                        }
                     </Grid>
             }
         </div >
