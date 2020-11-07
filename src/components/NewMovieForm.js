@@ -6,8 +6,9 @@ import { Redirect } from 'react-router-dom';
 
 class NewMovieForm extends Component {
     state = {
-        title: '',
-        cover: '',
+        _id: this.props.movie ? this.props.movie._id : '',
+        title: this.props.movie ? this.props.movie.title : '',
+        cover: this.props.movie ? this.props.movie.cover : '',
         errors: {}
     }
 
@@ -42,8 +43,14 @@ class NewMovieForm extends Component {
             errors
         });
 
+        const _id = this.state._id || this.props.newMovie.movie._id
         if (Object.keys(errors).length === 0) {
-            this.props.onNewMovieSubmit(this.state);
+
+            if (!id) {
+                this.props.onNewMovieSubmit(this.state);
+            } else {
+                this.props.onUpdateMovieSubmit({ ...this.state, id });
+            }
         }
     }
 
@@ -57,7 +64,7 @@ class NewMovieForm extends Component {
     render() {
         const { errors } = this.state;
         const form = (
-            <Form onSubmit={this.onSubmit} loading={this.props.newMovie.fetching}>
+            <Form onSubmit={this.onSubmit} loading={this.props.newMovie.fetching || this.props.newMovie.movie.fetching}>
                 <Form.Field error={!!errors.title}>
                     <label>Title</label>
                     {errors.title && <InlineError message={errors.title} />}
