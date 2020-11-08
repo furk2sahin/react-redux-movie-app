@@ -45,7 +45,7 @@ class NewMovieForm extends Component {
             redirect: true
         });
 
-        const _id = this.state._id || this.props.newMovie.movie._id
+        const id = this.state._id || this.props.newMovie.movie._id
         if (Object.keys(errors).length === 0) {
 
             if (!id) {

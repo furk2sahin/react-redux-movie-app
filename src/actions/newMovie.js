@@ -35,7 +35,7 @@ export function fetchMovie(id) {
     }
 }
 
-export function onUpdateMovieSubmit({ _id, title, cover }) {
+export function onUpdateMovieSubmit({ id, title, cover }) {
     return dispatch => {
         dispatch({
             type: "NEW_MOVIE",
