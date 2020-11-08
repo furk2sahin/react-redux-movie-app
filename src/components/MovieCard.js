@@ -25,7 +25,7 @@ const MovieCard = ({ movie, deleteMovie }) => (
         <Card
             image={movie.cover}
             header={movie.title}
-            extra={extra, deleteMovie} />
+            extra={extra(extra, deleteMovie)} />
     </Grid.Column>
 );
 
